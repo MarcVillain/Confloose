@@ -9,7 +9,7 @@ function showImage {
     killall -9 firefox;
     sleep 0.2;
     firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/images/Lock.gif;
-    i3-msg '[title="LOCK BEFORE YOU LEAVE"] fullscreen enable; [title="LOCK BEFORE YOU LEAVE"] move workspace 42';
+    i3-msg '[title=".*Mozilla Firefox"] fullscreen enable; [title=".*Mozilla Firefox"] move workspace 42';
 }
 
 function updateGamma {
