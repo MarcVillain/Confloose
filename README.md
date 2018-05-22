@@ -8,7 +8,7 @@ This git repository contains harmless conflooses created to work on linux tiling
 ## How to use
 Open a terminal using `Meta + Enter` and type:
 ```
-sh <(curl -s https://github.com/MarcVillain/Confloose/XX.sh)
+sh <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/XX.sh)
 ```
 
 ## Scripts
