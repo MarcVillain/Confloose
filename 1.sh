@@ -1,5 +1,5 @@
 #!/bin/bash
-SCREEN=$(xrandr | grep 'connected' | cut -d' ' -f1);
+SCREEN=$(xrandr | grep ' connected' | cut -d' ' -f1);
 
 function forceWorkspace {
     i3-msg 'workspace 42';
