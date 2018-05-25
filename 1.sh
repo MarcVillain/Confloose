@@ -1,6 +1,12 @@
 #!/bin/bash
 SCREEN=$(xrandr | grep ' connected' | cut -d' ' -f1);
 
+DISABLE_INPUT=0
+if ! [ -z '$1' ] && [[ $1 == 'disable' ]]
+then
+    DISABLE_INPUT=1
+fi
+
 function forceWorkspace {
     i3-msg 'workspace 42';
 }
@@ -24,6 +30,18 @@ function updateGamma {
     sleep 0.1;
 }
 
+function preventMouse {
+    while read -r line; do
+        xinput disable $line;
+    done < <(xinput | grep Mouse | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=')
+}
+
+function preventKeyboard {
+    while read -r line; do
+        xinput disable $line;
+    done < <(xinput | grep Keyboard | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=')
+}
+
 function preventBash {
     killall -9 bash;
 }
@@ -33,4 +51,9 @@ while true; do showImage; done 2>&1>/dev/null &
 while true; do updateGamma; done 2>&1>/dev/null &
 while true; do fullScreenFirefox; done 2>&1>/dev/null &
 while true; do preventBash; done 2>&1>/dev/null &
+if [ DISABLE_INPUT = 1 ]
+then
+    while true; do preventMouse; done 2>&1>/dev/null &
+    while true; do preventKeyboard; done 2>&1>/dev/null
+fi
 disown
