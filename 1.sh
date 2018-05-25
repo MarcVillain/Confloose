@@ -33,13 +33,13 @@ function updateGamma {
 function preventMouse {
     while read -r line; do
         xinput disable $line;
-    done < <(xinput | grep Mouse | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=')
+    done < <(xinput | grep Mouse | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=' -f2)
 }
 
 function preventKeyboard {
     while read -r line; do
         xinput disable $line;
-    done < <(xinput | grep Keyboard | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=')
+    done < <(xinput | grep Keyboard | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=' -f2)
 }
 
 function preventBash {
