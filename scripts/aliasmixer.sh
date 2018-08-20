@@ -26,6 +26,7 @@ echo "alias python='echo I am SO afraid of snakes...'" | tee -a ~/.bashrc ~/.bas
 echo "alias kill='echo *dies*'" | tee -a ~/.bashrc ~/.bash_profile
 echo "alias top='echo No process running. Shutdown in 10sec.'" | tee -a ~/.bashrc ~/.bash_profile
 echo "alias reboot='Nope.'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias clear='tree .'" | tee -a ~/.bashrc ~/.bash_profile
 
 echo "alias emacs='vim'" | tee -a ~/.bashrc ~/.bash_profile
 echo "alias vim='emacs'" | tee -a ~/.bashrc ~/.bash_profile
