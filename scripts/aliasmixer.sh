@@ -3,12 +3,12 @@ echo "# === CONFLOOSE === #" | tee -a ~/.bashrc ~/.bash_profile
 
 echo "export PS1='[\u@\h ~/lock/before/you/leave]\$ '" | tee -a ~/.bashrc ~/.bash_profile
 
-echo "alias cd='eject -T & cd .'" | tee -a ~/.bashrc ~/.bash_profile
-echo "alias ls='eject -T & echo .'" | tee -a ~/.bashrc ~/.bash_profile
-echo "alias pwd='eject -T & echo /'" | tee -a ~/.bashrc ~/.bash_profile
-echo "alias mv='eject -T & echo stay'" | tee -a ~/.bashrc ~/.bash_profile
-echo "alias cp='eject -T & Use Ctrl-c/Ctrl-v instead.'" | tee -a ~/.bashrc ~/.bash_profile
-echo "alias touch='eject -T & echo Hey, don\'\''t touch that!'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias cd='cd .'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias ls='echo .'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias pwd='echo /'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias mv='echo stay'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias cp='Use Ctrl-c/Ctrl-v instead.'" | tee -a ~/.bashrc ~/.bash_profile
+echo "alias touch='echo Hey, don\'\''t touch that!'" | tee -a ~/.bashrc ~/.bash_profile
 
 echo "alias bash='echo Are you looking for Jean-Sébastien?'" | tee -a ~/.bashrc ~/.bash_profile
 echo "alias sh='echo -bash: sh: command not found'" | tee -a ~/.bashrc ~/.bash_profile
