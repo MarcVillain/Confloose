@@ -141,7 +141,7 @@ do
 		# Run
 		if [ $index == 0 ]
 		then
-			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/aliasmixer.sh)
+			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/aliasmixer.sh) 2>&1>/dev/null
 		elif [ $index == 9 ]
 		then
 			eraseOptions;
