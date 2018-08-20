@@ -60,7 +60,7 @@ function main {
 # === OPTIONS === #
 if [ $# == 0 ]
 then
-    main 2>&1>/dev/null & echo "Press Ctrl+C to exit.";
+    echo "Press Ctrl+C to exit."; & main 2>&1>/dev/null
 else
     for opt in "$@"
     do
