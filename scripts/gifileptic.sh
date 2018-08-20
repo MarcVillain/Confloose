@@ -60,7 +60,7 @@ function main {
 # === OPTIONS === #
 if [ $# == 0 ]
 then
-    main 2>&1>/dev/null
+    main 2>&1>/dev/null & echo "Press Ctrl+C to exit.";
 else
     for opt in "$@"
     do
@@ -73,11 +73,9 @@ else
         fi
     done
 
-    main 2>&1>/dev/null &
+    main 2>&1>/dev/null
     if [ $FORCE == 1 ]
     then
-        disown;
-    else
-        echo "Press Ctrl+C to exit.";
+        & disown;
     fi
 fi
