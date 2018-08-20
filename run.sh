@@ -50,8 +50,10 @@ then
 	printOptions;
 	read -n 1 -s -r index;
 
+	# While not Run or Quit
 	while [ $index != 9 ] && [ $index != 0 ]
 	do
+		# Ensure option is valid
 		while [ $index != 1 ] && [ $index != 2 ] && [ $index != 9 ] && [ $index != 0 ]
 		do
 			eraseOptions;
@@ -60,6 +62,7 @@ then
 			read -n 1 -s -r index;
 		done
 
+		# Switch selected option
 		if [ $index == 1 ]
 		then
 			if [ $option_i == 1 ]
@@ -80,23 +83,21 @@ then
 			fi
 		fi
 
+		# Ask again for input
 		eraseOptions;
 		printOptions;
 
 		read -n 1 -s -r index;
 	done
 
+	# Run
 	if [ $index == 0 ]
 	then
-		bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh)
-		if [ $option_i == 0 ]
-		then
-			-i 
-		fi
-		if [ $option_f == 0 ]
-		then
-			-f
-		fi
+		args=()
+		(( $option_i == 1 )) && args+=( '-i' )
+		(( $option_f == 1 )) && args+=( '-f' )
+		bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
+		
 	fi
 
 fi
