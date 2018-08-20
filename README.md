@@ -3,15 +3,22 @@ This git repository contains harmless conflooses created to work on linux tiling
 
 ## Rules
 - Use cautiously and only if you know what you are doing.
-- I will not be held responsible for any bad use.
+- You (and only you) will be held responsible for any bad use.
+- Ensure all work is properly saved before running any scripts.
 
 ## How to use
-Open a terminal using `Meta + Enter` and type:
+Open a terminal using `Meta+Enter` and type:
 ```
-sh <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/XX.sh)
+bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/run.sh)
 ```
 
 ## Scripts
-ID | Name | Description | How to remove
---- | --- | --- | ---
-1 | Gifileptic | Prevent the session from being used and display an animated gif. | Reboot.
+- `Gifileptic` - Prevent the session from being used and display an animated gif in full screen.
+	- `-i` : Disable all mouses and keyboards input
+	- `-f` : Prevent use of Ctrl+c
+
+## Removal methods
+- `Ctrl+c`
+- Execute `killall -9 bash`
+- `Meta+Shift+E`
+- Reboot
