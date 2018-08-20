@@ -33,18 +33,18 @@ then
 		echo 'Gifileptic options:';
 		if [ $option_i == 1 ]
 		then
-			echo '    1) \e[32mInput enabled\e[0m';
+			echo -e '    1) \e[32mInput enabled\e[0m';
 		else
-			echo '    1) \e[31mInput disabled\e[0m';
+			echo -e '    1) \e[31mInput disabled\e[0m';
 		fi
 		if [ $option_f == 1 ]
 		then
-			echo '    2) \e[32mCtrl-c enabled\e[0m';
+			echo -e '    2) \e[32mCtrl-c enabled\e[0m';
 		else
-			echo '    2) \e[31mCtrl-c disabled\e[0m';
+			echo -e '    2) \e[31mCtrl-c disabled\e[0m';
 		fi
 		echo '    9) Cancel';
-		echo '    0) \e[5mRun\e[0m';
+		echo -e '    0) \e[5mRun\e[0m';
 	}
 	
 	printOptions;
