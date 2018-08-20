@@ -5,6 +5,7 @@ index=-1
 echo '---';
 echo 'Please select a script:';
 echo '    1) Gifileptic';
+echo '    2) AliasMixer';
 echo '    0) Quit';
 
 while [ $index != 0 ]
@@ -12,7 +13,7 @@ do
 
 	read -n 1 -s -r index;
 
-	while [ $index != 1 ] && [ $index != 0 ]
+	while [ $index != 1 ] && [ $index != 2 ] && [ $index != 0 ]
 	do
 		echo 'Wrong input';
 		read -n 1 -s -r index;
@@ -102,6 +103,45 @@ do
 			(( $option_i == 1 )) && args+=( '-i' )
 			(( $option_f == 1 )) && args+=( '-f' )
 			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
+		elif [ $index == 9 ]
+		then
+			eraseOptions;
+			tput cuu1;
+	    	tput el;
+		fi
+	elif [ $index == 2 ]
+	then
+		# === AliasMixer === #
+		function eraseOptions {
+			for i in {1..3}
+			do
+				tput cuu1;
+	    		tput el;
+	    	done
+		}
+
+		function printOptions {
+			echo 'AliasMixer options:';
+			echo '    9) Cancel';
+			echo -e '    0) \e[5mRun\e[0m';
+		}
+		
+		printOptions;
+		read -n 1 -s -r index;
+
+		# While not Run or Quit
+		while [ $index != 9 ] && [ $index != 0 ]
+		do
+			eraseOptions;
+			printOptions;
+
+			read -n 1 -s -r index;
+		done
+
+		# Run
+		if [ $index == 0 ]
+		then
+			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/aliasmixer.sh)
 		elif [ $index == 9 ]
 		then
 			eraseOptions;
