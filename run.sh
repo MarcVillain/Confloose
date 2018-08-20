@@ -96,6 +96,8 @@ do
 			read -n 1 -s -r index;
 		done
 
+		echo '---';
+
 		# Run
 		if [ $index == 0 ]
 		then
@@ -137,6 +139,8 @@ do
 
 			read -n 1 -s -r index;
 		done
+
+		echo '---';
 
 		# Run
 		if [ $index == 0 ]
