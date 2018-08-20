@@ -2,12 +2,13 @@
 
 index=-1
 
+echo '---';
+echo 'Please select a script:';
+echo '    1) Gifileptic';
+echo '    0) Quit';
+
 while [ $index != 0 ]
 do
-	echo '---';
-	echo 'Please select a script:';
-	echo '    1) Gifileptic';
-	echo '    0) Quit';
 
 	read -n 1 -s -r index;
 
@@ -101,6 +102,11 @@ do
 			(( $option_i == 1 )) && args+=( '-i' )
 			(( $option_f == 1 )) && args+=( '-f' )
 			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
+		elif [ $index == 9 ]
+		then
+			eraseOptions;
+			tput cuu1;
+	    	tput el;
 		fi
 	fi
 done
