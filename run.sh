@@ -12,7 +12,7 @@ do
 	read -n 1 -s -r index;
 done
 
-if [ index == 1 ]
+if [ $index == 1 ]
 then
 	bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/gifileptic.sh);
 fi
