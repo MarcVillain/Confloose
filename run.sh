@@ -1,14 +1,16 @@
 #!/bin/bash
 
-echo '---';
-echo 'Please select a script:';
-echo '    1) Gifileptic';
-echo '    0) Quit';
-
-read -n 1 -s -r index;
+index=-1
 
 while [ $index != 0 ]
 do
+	echo '---';
+	echo 'Please select a script:';
+	echo '    1) Gifileptic';
+	echo '    0) Quit';
+
+	read -n 1 -s -r index;
+
 	while [ $index != 1 ] && [ $index != 0 ]
 	do
 		echo 'Wrong input';
@@ -100,6 +102,5 @@ do
 			(( $option_f == 1 )) && args+=( '-f' )
 			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
 		fi
-
 	fi
 done
