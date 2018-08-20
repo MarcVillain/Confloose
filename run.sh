@@ -14,5 +14,5 @@ done
 
 if [ $index == 1 ]
 then
-	bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/gifileptic.sh);
+	bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh);
 fi
