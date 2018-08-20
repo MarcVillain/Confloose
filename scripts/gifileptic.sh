@@ -73,9 +73,10 @@ else
         fi
     done
 
-    main 2>&1>/dev/null
     if [ $FORCE == 1 ]
     then
-        & disown;
+        main 2>&1>/dev/null & disown
+    else
+        main 2>&1>/dev/null
     fi
 fi
