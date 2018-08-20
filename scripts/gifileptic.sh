@@ -44,7 +44,7 @@ function preventKeyboard {
 # === MAIN === #
 function main {
     while true; do
-        if [ DISABLE_INPUT = 1 ]
+        if [ NO_INPUT = 1 ]
         then
             preventMouse;
             preventKeyboard;
