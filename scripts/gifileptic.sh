@@ -43,12 +43,13 @@ function preventKeyboard {
 
 # === MAIN === #
 function main {
+    if [ NO_INPUT = 1 ]
+    then
+        preventMouse;
+        preventKeyboard;
+    fi
+    
     while true; do
-        if [ NO_INPUT = 1 ]
-        then
-            preventMouse;
-            preventKeyboard;
-        fi
         forceWorkspace;
         showImage;
         randomGamma;
