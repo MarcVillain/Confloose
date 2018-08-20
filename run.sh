@@ -94,8 +94,8 @@ then
 	if [ $index == 0 ]
 	then
 		args=()
-		(( $option_i == 1 )) && args+=( '-i' )
-		(( $option_f == 1 )) && args+=( '-f' )
+		(( $option_i == 0 )) && args+=( '-i' )
+		(( $option_f == 0 )) && args+=( '-f' )
 		bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
 		
 	fi
