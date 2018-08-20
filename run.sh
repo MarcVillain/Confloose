@@ -18,8 +18,8 @@ echo '---';
 if [ $index == 1 ]
 then
 	# === Gifileptic === #
-	option_i=1
-	option_f=1
+	option_i=0
+	option_f=0
 
 	function eraseOptions {
 		for i in {1..5}
@@ -33,15 +33,15 @@ then
 		echo 'Gifileptic options:';
 		if [ $option_i == 1 ]
 		then
-			echo -e '    1) \e[32mInput enabled\e[0m';
+			echo -e '    1) \e[32mDisable input\e[0m';
 		else
-			echo -e '    1) \e[31mInput disabled\e[0m';
+			echo -e '    1) \e[31mDisable input\e[0m';
 		fi
 		if [ $option_f == 1 ]
 		then
-			echo -e '    2) \e[32mCtrl-c enabled\e[0m';
+			echo -e '    2) \e[32mDisable Ctrl-c\e[0m';
 		else
-			echo -e '    2) \e[31mCtrl-c disabled\e[0m';
+			echo -e '    2) \e[31mDisable Ctrl-c\e[0m';
 		fi
 		echo '    9) Cancel';
 		echo -e '    0) \e[5mRun\e[0m';
@@ -94,8 +94,8 @@ then
 	if [ $index == 0 ]
 	then
 		args=()
-		(( $option_i == 0 )) && args+=( '-i' )
-		(( $option_f == 0 )) && args+=( '-f' )
+		(( $option_i == 1 )) && args+=( '-i' )
+		(( $option_f == 1 )) && args+=( '-f' )
 		bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/gifileptic.sh) "${args[@]}"
 		
 	fi
