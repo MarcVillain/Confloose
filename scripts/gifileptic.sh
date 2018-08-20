@@ -43,12 +43,12 @@ function preventKeyboard {
 
 # === MAIN === #
 function main {
-    if [ NO_INPUT = 1 ]
+    if [ $NO_INPUT == 1 ]
     then
         preventMouse;
         preventKeyboard;
     fi
-    
+
     while true; do
         forceWorkspace;
         showImage;
@@ -74,7 +74,7 @@ else
     done
 
     main 2>&1>/dev/null &
-    if [ $FORCE = 1 ]
+    if [ $FORCE == 1 ]
     then
         disown;
     else
