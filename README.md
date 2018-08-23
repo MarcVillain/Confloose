@@ -16,6 +16,8 @@ bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/ru
 - `Gifileptic` - Prevent the session from being used and display an animated gif in full screen.
 	- `-i` : Disable all mouses and keyboards input
 	- `-f` : Prevent use of Ctrl+c
+- `AliasMixer` - Mixes aliases and change certain commands outputs
+- `BigBrother` - Displays an ascii art of eyes in every new terminal
 
 ## Removal methods
 - `Ctrl+c`
