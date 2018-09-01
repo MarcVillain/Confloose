@@ -15,7 +15,7 @@ do
 
 	read -n 1 -s -r index;
 
-	while [ $index != 1 ] && [ $index != 2 ] && [ $index != 3 ] && [ $index != 0 ]
+	while [ $index != 1 ] && [ $index != 2 ] && [ $index != 3 ] && [ $index != 4 ] && [ $index != 0 ]
 	do
 		echo 'Wrong input';
 		read -n 1 -s -r index;
