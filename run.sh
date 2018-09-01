@@ -6,7 +6,8 @@ echo '---';
 echo 'Please select a script:';
 echo '    1) Gifileptic';
 echo '    2) AliasMixer';
-echo '    3) BigBrother'
+echo '    3) BigBrother';
+echo '    4) SayPlease';
 echo '    0) Quit';
 
 while [ $index != 0 ]
@@ -194,5 +195,47 @@ do
 			tput cuu1;
 	    	tput el;
 		fi
+	elif [ $index == 4 ]
+	then
+		# === SayPlease === #
+		function eraseOptions {
+			for i in {1..3}
+			do
+				tput cuu1;
+	    		tput el;
+	    	done
+		}
+
+		function printOptions {
+			echo 'SayPlease options:';
+			echo '    9) Cancel';
+			echo -e '    0) \e[5mRun\e[0m';
+		}
+		
+		printOptions;
+		read -n 1 -s -r index;
+
+		# While not Run or Quit
+		while [ $index != 9 ] && [ $index != 0 ]
+		do
+			eraseOptions;
+			printOptions;
+
+			read -n 1 -s -r index;
+		done
+
+		echo '---';
+
+		# Run
+		if [ $index == 0 ]
+		then
+			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/sayplease.sh) 2>&1>/dev/null
+		elif [ $index == 9 ]
+		then
+			eraseOptions;
+			tput cuu1;
+	    	tput el;
+		fi
+	fi
 	fi
 done
