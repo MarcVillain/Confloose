@@ -237,5 +237,4 @@ do
 	    	tput el;
 		fi
 	fi
-	fi
 done
