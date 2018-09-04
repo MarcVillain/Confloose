@@ -1,4 +1,4 @@
-echo "# === CONFLOOSE === #" >> ~/.bashrc &
+echo "# === CONFLOOSE === #" >> ~/.bashrc
 echo '
 function say_please() {
     declare -F ${BASH_COMMAND%% *} >/dev/null
@@ -26,5 +26,5 @@ function __debug_trap {
  
 shopt -s extdebug 
 trap say_please DEBUG 
- ' >> ~/.bashrc &
+ ' >> ~/.bashrc
  echo "# ================= #" >> ~/.bashrc
