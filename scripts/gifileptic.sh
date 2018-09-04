@@ -13,7 +13,7 @@ function forceWorkspace {
 function showImage {
     if ! pgrep -x "firefox" > /dev/null
     then
-        firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/images/Lock.gif 2>&1>/dev/null & disown
+        firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/webpages/Lock.html 2>&1>/dev/null & disown
     fi
 }
 
