@@ -8,6 +8,7 @@ echo '    1) Gifileptic';
 echo '    2) AliasMixer';
 echo '    3) BigBrother';
 echo '    4) SayPlease';
+echo '    5) Eject';
 echo '    0) Quit';
 
 while [ $index != 0 ]
@@ -15,7 +16,7 @@ do
 
 	read -n 1 -s -r index;
 
-	while [ $index != 1 ] && [ $index != 2 ] && [ $index != 3 ] && [ $index != 4 ] && [ $index != 0 ]
+	while [ $index != 1 ] && [ $index != 2 ] && [ $index != 3 ] && [ $index != 4 ] && [ $index != 5 ] && [ $index != 0 ]
 	do
 		echo 'Wrong input';
 		read -n 1 -s -r index;
@@ -230,6 +231,47 @@ do
 		if [ $index == 0 ]
 		then
 			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/sayplease.sh) 2>&1>/dev/null
+		elif [ $index == 9 ]
+		then
+			eraseOptions;
+			tput cuu1;
+	    	tput el;
+		fi
+	elif [ $index == 5 ]
+	then
+		# === Eject === #
+		function eraseOptions {
+			for i in {1..3}
+			do
+				tput cuu1;
+	    		tput el;
+	    	done
+		}
+
+		function printOptions {
+			echo 'Eject options:';
+			echo '    9) Cancel';
+			echo -e '    0) \e[5mRun\e[0m';
+		}
+		
+		printOptions;
+		read -n 1 -s -r index;
+
+		# While not Run or Quit
+		while [ $index != 9 ] && [ $index != 0 ]
+		do
+			eraseOptions;
+			printOptions;
+
+			read -n 1 -s -r index;
+		done
+
+		echo '---';
+
+		# Run
+		if [ $index == 0 ]
+		then
+			bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/scripts/eject.sh) 2>&1>/dev/null
 		elif [ $index == 9 ]
 		then
 			eraseOptions;

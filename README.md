@@ -19,6 +19,7 @@ bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/ru
 - `AliasMixer` - Mixes aliases and change certain commands outputs
 - `BigBrother` - Displays an ascii art of eyes in every new terminal
 - `SayPlease` - Asks the user to say "please" before running any command
+- `Eject` - Running a command will have a 10% chance to open the cd player
 
 ## Removal methods
 - `Ctrl+c`
