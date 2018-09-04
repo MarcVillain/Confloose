@@ -16,13 +16,6 @@ function say_please() {
         fi 
     done 
 }
-
-function __debug_trap {
-    declare -F ${BASH_COMMAND%% *} >/dev/null
-    if ! [[ "${BASH_COMMAND%% *}" == "${FUNCNAME[1]}" ]]; then
-        echo "[Running] ${BASH_COMMAND%% *}"
-    fi
-}
  
 shopt -s extdebug 
 trap say_please DEBUG 
