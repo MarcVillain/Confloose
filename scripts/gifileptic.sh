@@ -13,7 +13,7 @@ function forceWorkspace {
 function showImage {
     if ! pgrep -x "firefox" > /dev/null
     then
-        firefox --new-window https://raw.githubusercontent.com/MarcVillain/Confloose/master/webpages/Lock.html 2>&1>/dev/null & disown
+        firefox --new-window 'http://htmlpreview.github.io/?https://raw.githubusercontent.com/MarcVillain/Confloose/master/webpages/Lock.html' 2>&1>/dev/null & disown
     fi
 }
 
@@ -48,6 +48,8 @@ function main {
         preventMouse;
         preventKeyboard;
     fi
+
+    pkill -9 firefox
 
     while true; do
         forceWorkspace;
