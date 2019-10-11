@@ -5,8 +5,7 @@ prompt_options || return 1
 # But, since it is itself in a heredoc, we need to add the missing backslash so
 # that it can be executed from the files \\\`.
 
-tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
-# === CONFLOOSE === #
+write_to_rc <<-EOF
 cat <<-BIG_BROTHER_EOF
 
                              __..--.._
@@ -22,5 +21,4 @@ cat <<-BIG_BROTHER_EOF
         BIG BROTHER IS WATCHING YOU
 
 BIG_BROTHER_EOF
-# ================= #
 EOF

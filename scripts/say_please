@@ -1,7 +1,6 @@
 prompt_options || return 1
 
-tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
-# === CONFLOOSE === #
+write_to_rc <<-EOF
 say_please()
 {
     while true; do
@@ -15,5 +14,4 @@ say_please()
 }
 
 export PROMPT_COMMAND="say_please; \$PROMPT_COMMAND"
-# ================= #
 EOF

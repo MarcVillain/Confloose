@@ -1,7 +1,6 @@
 prompt_options || return 1
 
-tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
-# === CONFLOOSE === #
+write_to_rc <<-EOF
 random_eject()
 {
     if [ \$(( RANDOM % 9 )) -eq 0 ]; then
@@ -10,5 +9,4 @@ random_eject()
 }
 
 PROMPT_COMMAND="random_eject; \$PROMPT_COMMAND"
-# ================= #
 EOF

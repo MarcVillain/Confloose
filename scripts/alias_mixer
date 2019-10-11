@@ -1,7 +1,6 @@
 prompt_options || return 1
 
-tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
-# === CONFLOOSE === #
+write_to_rc <<-EOF
 export PS1="[\u@\h ~/lock/before/you/leave]\$ "
 
 alias cd="cd ."
@@ -41,5 +40,4 @@ alias i3lock="echo I see... So now, you are locking uh?"
 alias exit="echo Are you sure?"
 
 alias alias="sleep 5"
-# ================= #
 EOF
