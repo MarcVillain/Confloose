@@ -1,4 +1,4 @@
-prompt_options
+prompt_options || return 1
 
 # In the following, we need to add the ascii to the files. Since ` characters
 # will be evaluated, we need to backslash then \`.

@@ -85,7 +85,7 @@ prompt_options()
         # Handle exit option (value 0)
         if [ $selected -eq 0 ]; then
             echo "Canceled!"
-            exit 1
+            return 1
         fi
 
         # Handle run option

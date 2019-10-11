@@ -1,4 +1,4 @@
-prompt_options "disable input" 0 "disable ctrl+c" 0
+prompt_options "disable input" 0 "disable ctrl+c" 0 || return 1
 NO_INPUT=${options[0]}
 FORCE=${options[1]}
 
