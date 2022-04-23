@@ -1,9 +1,9 @@
 prompt_options || return 1
 
-# In the following, we need to add the ascii to the files. Since ` characters
-# will be evaluated, we need to backslash then \`.
-# But, since it is itself in a heredoc, we need to add the missing backslash so
-# that it can be executed from the files \\\`.
+# In the following, we need to add the ascii to the rc files.
+# Since the backtick (`) character will be evaluated, we need to backslash
+# it (\`). But, since it is itself in a heredoc, we need to add the missing
+# backslash so that it can be executed from the rc files (\\\`).
 
 write_to_rc <<-EOF
 cat <<-BIG_BROTHER_EOF
