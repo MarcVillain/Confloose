@@ -1,5 +1,3 @@
-#!/bin/bash
-
 scripts_count=${#scripts[@]}
 
 # Display all scripts
