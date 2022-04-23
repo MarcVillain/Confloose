@@ -1,5 +1,3 @@
-#!/bin/sh
-
 write_to_rc()
 {
     _write_to_rc()
