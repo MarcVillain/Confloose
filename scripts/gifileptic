@@ -62,7 +62,7 @@ main()
         show_image
         random_gamma
         full_screen_firefox
-        if [ ! -z ${DEBUG+x} ]; then
+        if [ -n ${DEBUG+x} ]; then
             break
         fi
     done
