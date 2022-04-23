@@ -1,11 +1,9 @@
 prompt_options "disable input" 0 "disable ctrl+c" 0 || return 1
-NO_INPUT=${options[0]}
-FORCE=${options[1]}
 
 # === VARIABLES === #
 SCREEN=$(xrandr | grep " connected" | cut -d" " -f1);
-NO_INPUT=0
-FORCE=0
+NO_INPUT=${options[0]}
+FORCE=${options[1]}
 
 
 # === FUNCTIONS === #
