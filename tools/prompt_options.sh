@@ -48,6 +48,11 @@ erase_stdout()
 
 prompt_options()
 {
+    # Reset variables
+    err_to_erase=0
+    actions=()
+    options=()
+
     # Extract given data
     while [ $# -gt 0 ]; do
         actions+=("$1")
